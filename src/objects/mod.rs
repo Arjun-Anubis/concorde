@@ -1,12 +1,12 @@
 use serde::Serialize;
 
 #[derive(Serialize)]
-pub struct Event {
+pub struct SendEvent {
     pub op : u32,
     pub d :  Data,
 }
 
-impl Event {
+impl SendEvent {
     pub fn to_string( self ) -> String {
         match serde_json::to_string_pretty( &self ) {
             Ok(s) => s,
